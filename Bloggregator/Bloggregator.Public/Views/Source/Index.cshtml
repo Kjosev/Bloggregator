@@ -1,0 +1,92 @@
+﻿@using Bloggregator.Public.Models
+@model Bloggregator.AppServices.Features.Public.Source.GetWithArticles.Response
+@{
+    if (string.IsNullOrEmpty(ViewBag.Title))
+    {
+        ViewBag.Title = Model.Source.Source.Name;
+    }
+}
+
+<div class="container main">
+    @using (Html.BeginForm("Index", "Source", FormMethod.Post))
+    {
+        @Html.HiddenFor(x => x.Source.Source.Id)
+        <div class="input-group input-width">
+            @Html.TextBoxFor(x => x.SearchTerm, new { @class = "form-control form-search", placeholder = "Search" })
+            <span class="input-group-btn">
+                <button type="submit" class="btn btn-blogBuddy"><span class="glyphicon glyphicon-search"></span></button>
+            </span>
+        </div>
+    }
+
+    <!-- Header -->
+    <div class="row">
+        <div class="col-xs-12 favorites-header">
+            <b>Source - <a target="_blank" href="@Model.Source.Source.Url" class="header-a">@Model.Source.Source.Name</a></b>
+        </div>
+    </div>
+
+    <!-- Data -->
+    <div class="row">
+        @foreach (var article in Model.Source.Articles)
+            {
+                <!-- Article card -->
+            <div class="article-card col-xs-12 col-sm-6 col-lg-4">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <!-- Picture -->
+                        <div class="favorites-img">
+                            <a target="_blank" href="@article.Url">
+                                @{
+                                    var imgUrl = string.IsNullOrEmpty(article.ImageUrl) ? "/images/brand.png" : article.ImageUrl;
+                                }
+                                <img class="img-responsive home-img" src="@imgUrl" alt="@article.Title">
+                            </a>
+                        </div>
+
+                        <div class="home-title">
+                            <!-- Title -->
+                            <a target="_blank" class="home-a" href="@article.Url">
+                                <b>@article.Title</b>
+                            </a>
+
+                            <!-- Description -->
+                            <p class="favorites-description">@Html.Raw(article.Description)</p>
+
+                            @if (User.Identity.IsAuthenticated)
+                            {
+                                    <!-- Favorites Star -->
+                                <div class="ribbon" id="@article.Id">
+                                    <div class="ribbon-content"><span class="glyphicon @string.Format("glyphicon-star{0}", article.Favorite ? "" : "-empty")"></span></div>
+                                </div>
+                            }
+                        </div>
+
+                        <div class="home-info">
+                            <!-- Source -->
+                            <a href="@Url.Action("Index", "Source", new { sourceId = article.SourceId })" class="home-a">
+                                @article.SourceName
+                            </a>
+                            <!-- Time -->
+                            <span class="home-time">
+                                @article.UpdatedDate
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                                    }
+    </div>
+
+
+    <!-- pagination -->
+    @Html.Partial("_Pagination", new PaginationModel()
+   {
+       Id = Model.Source.Source.Id.ToString(),
+       Page = Model.Page,
+       PageCount = Model.PageCount,
+       PageSize = Model.PageSize
+   })
+
+</div>
+

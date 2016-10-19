@@ -1,0 +1,110 @@
+﻿@using Bloggregator.Public.Models
+@model Bloggregator.AppServices.Features.Public.Category.GetAll.Response
+@{
+    if (string.IsNullOrEmpty(ViewBag.Title))
+    {
+        ViewBag.Title = "Home Page";
+    }
+}
+    @if (TempData["ErrorMessage"] != null)
+    {
+        <div class="text-center alert alert-danger">
+            <strong>@TempData["ErrorMessage"]</strong>
+        </div>
+    }
+    @if (Model.Categories.Count == 0)
+    {
+        <div class="text-center">
+            <strong>No articles found.</strong>
+            <br />
+            <a href="@Url.Action("Index", "Manage")"><b>Manage</b></a> which categories and sources you want to see
+        </div>
+    }
+    else
+    {
+    <!-- Data -->
+    <div class="container main">
+        @using (Html.BeginForm("Search", "Home", FormMethod.Post))
+        {
+            <div class="input-group input-width">
+                @Html.TextBoxFor(x => x.SearchTerm, new { @class = "form-control form-search", placeholder = "Search" })
+                <span class="input-group-btn">
+                    <button type="submit" class="btn btn-blogBuddy"><span class="glyphicon glyphicon-search"></span></button>
+                </span>
+            </div>
+        }
+        <br />
+        <div class="row">
+            @foreach (var category in Model.Categories)
+            {
+                <!-- category-logged -->
+                <div class="col-xs-12 col-sm-6 category-card">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <!-- category-logged name -->
+                            <div class="panel-title">
+                                <a href="@Url.Action("Index", "Category", new { Id = category.Category.Id })">
+                                    <b>@category.Category.Name</b>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="panel-body home-body">
+                            @foreach (var article in category.Articles)
+                            {
+                                <!-- Article -->
+                                <div class="row home-article">
+                                    <div class="col-xs-5 col-md-4">
+                                        <!-- Picture -->
+                                        <a target="_blank" href="@article.Url">
+                                            @{
+                                                var imgUrl = string.IsNullOrEmpty(article.ImageUrl) ? "/images/brand.png" : article.ImageUrl;
+                                            }
+                                            <img class="img-responsive home-img" src="@imgUrl" alt="@article.Title">
+                                        </a>
+                                    </div>
+
+                                    <div class="col-xs-7 col-md-8">
+                                        <div class="home-title">
+                                            <!-- Title -->
+                                            <a target="_blank" class="home-a" href="@article.Url">
+                                                <b>@article.Title</b>
+                                            </a>
+                                            <br>
+                                            @if (User.Identity.IsAuthenticated)
+                                            {
+                                                <div class="ribbon" id="@article.Id">
+                                                    <div class="ribbon-content"><span class="glyphicon @string.Format("glyphicon-star{0}", article.Favorite ? "" : "-empty")"></span></div>
+                                                </div>
+                                            }
+                                        </div>
+
+                                        <div class="home-info">
+                                            <!-- Source -->
+                                            <a href="@Url.Action("Index", "Source", new { Id = @article.SourceId })" class="home-a">
+                                                @article.SourceName
+                                            </a>
+                                            <!-- Time -->
+                                            <span class="home-time">
+                                                @article.UpdatedDate
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                                }
+
+                            <!-- show more -->
+                            <div class="row">
+                                <div class="col-sm-12 text-center home-more">
+                                    <a href="@Url.Action("Index", "Category", new { Id = category.Category.Id })" class="home-a">
+                                        <b>Show more...</b>
+                                    </a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+    }

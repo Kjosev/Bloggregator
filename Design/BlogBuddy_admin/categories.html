@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Categories | BlogBuddy Administration</title>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- favicon -->
+    <link rel="icon" href="../images/favicon.ico">
+
+    <!-- CSS -->
+    <!-- Bootstrap css -->
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <!-- BlogBuddy_Admin css -->
+    <link rel="stylesheet" href="../css/blogBuddy_admin.css">
+
+    <!-- JS -->
+    <!-- jQuery library -->
+    <script src="../js/jquery.js"></script>
+    <!-- Bootstrap js -->
+    <script src="../js/bootstrap.js"></script>
+    <!-- BlogBuddy_Admin js -->
+    <script src="../js/blogBuddy_admin.js"></script>
+</head>
+<body>
+
+<!-- navbar -->
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <!-- header -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="home.html">
+                <img alt="Brand" src="../images/brand.png">
+            </a>
+        </div>
+
+        <!-- menu -->
+        <div class="collapse navbar-collapse" id="navbar-collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="users.html">Users</a></li>
+                <li><a href="articles.html">Articles</a></li>
+                <li class="active"><a>Categories</a></li>
+                <li><a href="sources.html">Sources</a></li>
+                <li><a href="login.html"><span class="glyphicon glyphicon-off"></span> Log Out </a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- main container -->
+<div class="container">
+
+    <!-- Add a new category -->
+    <div class="row">
+        <div class="col-xs-12 col-xs-offset-0 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <div class="panel-title">Add a new category</div>
+                </div>
+                <div class="panel-body">
+                    <div class="form-group-lg row">
+                        <div class="col-xs-12">
+                            <input type="text" class="form-control" placeholder="Category">
+                        </div>
+                        <div class="col-xs-12">
+                            <button type="button" class="btn btn-default btn-block form-control"> Add </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sources -->
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th class="col-xs-10 col-sm-6 blogBuddy-th">Name</th>
+                                <th class="hidden-xs col-sm-2 blogBuddy-th">Sources</th>
+                                <th class="hidden-xs col-sm-3 blogBuddy-th">Articles</th>
+                                <th class="col-xs-2 col-sm-1 blogBuddy-th text-center">Disable</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            <!-- EXAMPLE OF DISABLED DATA ROW -->
+                            <tr class="disabled">
+                                <td class="blogBuddy-td">Music</td>
+                                <td class="hidden-xs blogBuddy-td">15</td>
+                                <td class="hidden-xs blogBuddy-td">1021</td>
+                                <td class="blogBuddy-td text-center">
+                                    <span class="glyphicon glyphicon-remove blogBuddy-glyp-disabled"></span>
+                                </td>
+                            </tr>
+                            <!-- EXAMPLE OF DISABLED DATA ROW -->
+
+                            <!-- EXAMPLE OF DATA ROW -->
+                            <tr>
+                                <td class="blogBuddy-td">Music</td>
+                                <td class="hidden-xs blogBuddy-td">15</td>
+                                <td class="hidden-xs blogBuddy-td">1021</td>
+                                <td class="blogBuddy-td text-center">
+                                    <span class="glyphicon glyphicon-minus blogBuddy-glyp"></span>
+                                </td>
+                            </tr>
+                            <!-- EXAMPLE OF DATA ROW -->
+
+
+                            <!-- UNNECESSARY -->
+                            <tr>
+                                <td class="blogBuddy-td">Music</td>
+                                <td class="hidden-xs blogBuddy-td">15</td>
+                                <td class="hidden-xs blogBuddy-td">1021</td>
+                                <td class="blogBuddy-td text-center">
+                                    <span class="glyphicon glyphicon-minus blogBuddy-glyp"></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="blogBuddy-td">Music</td>
+                                <td class="hidden-xs blogBuddy-td">15</td>
+                                <td class="hidden-xs blogBuddy-td">1021</td>
+                                <td class="blogBuddy-td text-center">
+                                    <span class="glyphicon glyphicon-minus blogBuddy-glyp"></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="blogBuddy-td">Music</td>
+                                <td class="hidden-xs blogBuddy-td">15</td>
+                                <td class="hidden-xs blogBuddy-td">1021</td>
+                                <td class="blogBuddy-td text-center">
+                                    <span class="glyphicon glyphicon-minus blogBuddy-glyp"></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="blogBuddy-td">Music</td>
+                                <td class="hidden-xs blogBuddy-td">15</td>
+                                <td class="hidden-xs blogBuddy-td">1021</td>
+                                <td class="blogBuddy-td text-center">
+                                    <span class="glyphicon glyphicon-minus blogBuddy-glyp"></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="blogBuddy-td">Music</td>
+                                <td class="hidden-xs blogBuddy-td">15</td>
+                                <td class="hidden-xs blogBuddy-td">1021</td>
+                                <td class="blogBuddy-td text-center">
+                                    <span class="glyphicon glyphicon-minus blogBuddy-glyp"></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="blogBuddy-td">Music</td>
+                                <td class="hidden-xs blogBuddy-td">15</td>
+                                <td class="hidden-xs blogBuddy-td">1021</td>
+                                <td class="blogBuddy-td text-center">
+                                    <span class="glyphicon glyphicon-minus blogBuddy-glyp"></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="blogBuddy-td">Music</td>
+                                <td class="hidden-xs blogBuddy-td">15</td>
+                                <td class="hidden-xs blogBuddy-td">1021</td>
+                                <td class="blogBuddy-td text-center">
+                                    <span class="glyphicon glyphicon-minus blogBuddy-glyp"></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="blogBuddy-td">Music</td>
+                                <td class="hidden-xs blogBuddy-td">15</td>
+                                <td class="hidden-xs blogBuddy-td">1021</td>
+                                <td class="blogBuddy-td text-center">
+                                    <span class="glyphicon glyphicon-minus blogBuddy-glyp"></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="blogBuddy-td">Music</td>
+                                <td class="hidden-xs blogBuddy-td">15</td>
+                                <td class="hidden-xs blogBuddy-td">1021</td>
+                                <td class="blogBuddy-td text-center">
+                                    <span class="glyphicon glyphicon-minus blogBuddy-glyp"></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="blogBuddy-td">Music</td>
+                                <td class="hidden-xs blogBuddy-td">15</td>
+                                <td class="hidden-xs blogBuddy-td">1021</td>
+                                <td class="blogBuddy-td text-center">
+                                    <span class="glyphicon glyphicon-minus blogBuddy-glyp"></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="blogBuddy-td">Music</td>
+                                <td class="hidden-xs blogBuddy-td">15</td>
+                                <td class="hidden-xs blogBuddy-td">1021</td>
+                                <td class="blogBuddy-td text-center">
+                                    <span class="glyphicon glyphicon-minus blogBuddy-glyp"></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="blogBuddy-td">Music</td>
+                                <td class="hidden-xs blogBuddy-td">15</td>
+                                <td class="hidden-xs blogBuddy-td">1021</td>
+                                <td class="blogBuddy-td text-center">
+                                    <span class="glyphicon glyphicon-minus blogBuddy-glyp"></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="blogBuddy-td">Music</td>
+                                <td class="hidden-xs blogBuddy-td">15</td>
+                                <td class="hidden-xs blogBuddy-td">1021</td>
+                                <td class="blogBuddy-td text-center">
+                                    <span class="glyphicon glyphicon-minus blogBuddy-glyp"></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="blogBuddy-td">Music</td>
+                                <td class="hidden-xs blogBuddy-td">15</td>
+                                <td class="hidden-xs blogBuddy-td">1021</td>
+                                <td class="blogBuddy-td text-center">
+                                    <span class="glyphicon glyphicon-minus blogBuddy-glyp"></span>
+                                </td>
+                            </tr>
+                            <!-- UNNECESSARY -->
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- pagination -->
+    <div class="row">
+        <div class="col-xs-12 text-center">
+            <ul class="pagination pagination-sm">
+                <li class="disabled"><a href="#">Previous</a></li>
+                <li class="active"><a>1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li><a href="#">Next</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- footer -->
+<footer class="footer">
+    <div class="container">
+        <h6 class="text-center">BlogBuddy &copy; 2016</h6>
+    </div>
+</footer>
+
+</body>
+</html>

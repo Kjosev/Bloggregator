@@ -1,0 +1,69 @@
+﻿@using Bloggregator.Admin.Models
+@model Bloggregator.AppServices.Features.Admin.User.List.Response
+@{
+    ViewBag.Title = "Index";
+}
+
+<h3 style="color: #F67C00">Users</h3>
+<hr />
+<!-- Sources -->
+<div class="row">
+    <div class="col-xs-12">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th class="hidden-xs col-sm-2 blogBuddy-th">Username</th>
+                            <th class="hidden-xs col-sm-2 blogBuddy-th">Email</th>
+                            <th class="col-xs-2 col-sm-1 blogBuddy-th text-center">Edit</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <!-- EXAMPLE OF DATA ROW -->
+                        @foreach (var user in Model.Users)
+                        {
+
+                            <tr>
+                                <td class="hidden-xs blogBuddy-td">@user.UserName</td>
+                                <td class="hidden-xs blogBuddy-td">@user.Email</td>
+                                <td class="hidden-xs blogBuddy-td">
+                                    <span class="glyphicon @(user.IsActive ? "glyphicon-remove" : "glyphicon-ok") blogBuddy-glyp"></span>
+                                </td>
+                                <td class="blogBuddy-td text-center">
+                                    <a href="@Url.Action("Edit", "Users")?IsActive=@((!user.IsActive).ToString())&Id=@user.Id">
+                                        <span class="glyphicon @(user.IsActive ? "glyphicon-remove" : "glyphicon-ok") blogBuddy-glyp"></span>
+                                    </a>
+                                </td>
+                            </tr>
+
+                        }
+                        <!-- EXAMPLE OF DATA ROW -->
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- pagination -->
+@Html.Partial("_Pagination", new PaginationModel()
+{
+    PageCount = Model.PageCount,
+    Page = Model.Page,
+    PageSize = Model.PageSize
+})
+
+
+
+
+
+
+
+
+
+
+
+
+

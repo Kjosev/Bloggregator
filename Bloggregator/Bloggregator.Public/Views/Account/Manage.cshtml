@@ -1,0 +1,102 @@
+﻿@using Bloggregator.Public.Models;
+@using Microsoft.AspNet.Identity;
+@model Bloggregator.Public.Models.ManageUserViewModel
+@{
+    ViewBag.Title = "Account | BlogBuddy";
+    Layout = "~/Views/Shared/_EditAccountLayout.cshtml";
+    ViewBag.ActiveView = "ChangePassword";
+}
+
+
+<!-- Email % password -->
+<div class="panel panel-default" id="email">
+
+    <div class="panel-heading">
+        <div class="panel-title"><b>Password</b></div>
+    </div>
+
+    <div class="panel-body">
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            <!-- change password -->
+            <div class="account-change">
+
+                <div class="col-xs-12">
+                    <p class="account-text">
+                        <b>Change Password</b>
+                    </p>
+                </div>
+                @Html.ValidationSummary()
+                <p class="text-success">@ViewBag.StatusMessage</p>
+
+                <div class="col-xs-12 form-margin">
+                    @Html.ValidationMessageFor(m => m.OldPassword)
+                    <div class="control-group">
+                        <div class="input-group">
+                            @Html.PasswordFor(m => m.OldPassword, new
+                       {
+                           @class = "form-control",
+                           placeholder = Html.DisplayNameFor(m => m.OldPassword)
+                       })
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-lock user-glyp"></span></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xs-12 form-margin">
+                    @Html.ValidationMessageFor(m => m.NewPassword)
+                    <div class="control-group">
+                        <div class="input-group">
+                            @Html.PasswordFor(m => m.NewPassword, new { @class = "form-control", placeholder = Html.DisplayNameFor(m => m.NewPassword) })
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-lock user-glyp"></span></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xs-12 form-margin">
+                    @Html.ValidationMessageFor(m => m.ConfirmPassword)
+                    <div class="control-group">
+                        <div class="input-group">
+                            @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control", placeholder = Html.DisplayNameFor(m => m.ConfirmPassword) })
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-lock user-glyp"></span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- change email -->
+            <!--
+            <div class="account-change">
+
+                <div class="col-xs-12">
+                    <p class="account-text"><b>Change Email</b></p>
+                </div>
+
+                <div class="col-xs-12 form-margin">
+                    <p class="account-email">Your current email address: <i> name.surname@mail.com </i></p>
+                </div>
+
+                <div class="col-xs-12 admin-margin controls">
+                    <div class="input-group">
+                        <input type="password" class="form-control" placeholder="Set your new e-mail address">
+                        <span class="input-group-addon admin-margin"><span class="glyphicon glyphicon-envelope user-glyp"></span></span>
+                    </div>
+                </div>
+
+            </div>
+            -->
+
+            <div class="account-btn">
+                <div class="col-xs-12">
+                    <button type="submit" class="btn btn-block form-control btn-blogBuddy" value="Change password">
+                        Save &nbsp;
+                        <span class="glyphicon glyphicon-floppy-disk"></span>
+                    </button>
+                </div>
+            </div>
+        }
+
+    </div>
+</div>

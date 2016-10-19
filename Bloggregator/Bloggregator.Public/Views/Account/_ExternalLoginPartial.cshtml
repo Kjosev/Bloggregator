@@ -1,0 +1,20 @@
+﻿@model Bloggregator.Public.Models.ExternalLoginHelperModel
+    
+<div class="col-xs-12">
+    <button class="btn btn-lg btn-block btn-facebook btn-social" type="submit"
+            name="provider" value="Facebook">
+        <i class="fa fa-lg fa-facebook left"></i><span class="fa-margin">@Model.FacebookProviderText</span>
+    </button>
+</div>
+<div class="col-xs-12">
+    <button class="btn btn-lg btn-block btn-twitter btn-social" type="submit"
+            name="provider" value="Twitter">
+        <i class="fa fa-lg fa-twitter"></i><span class="fa-margin">@Model.TwitterProviderText</span>
+    </button>
+</div>
+<div class="col-xs-12">
+    <button class="btn btn-lg btn-block btn-google btn-social" type="submit"
+            name="provider" value="Google">
+        <i class="fa fa-lg fa-google-plus"></i><span class="fa-margin">@Model.GoogleProviderText</span>
+    </button>
+</div>

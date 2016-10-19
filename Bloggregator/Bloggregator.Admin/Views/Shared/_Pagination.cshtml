@@ -1,0 +1,72 @@
+﻿@model Bloggregator.Admin.Models.PaginationModel
+
+@{
+    bool enableNextPage = Model.Page < Model.PageCount;
+    bool enablePreviousPage = Model.Page > 1;
+
+    int numPreviousPagesShown = 2;
+    int numNextPagesShown = 2;
+
+    if (Model.Page <= 2)
+    {
+        numPreviousPagesShown = Model.Page - 1;
+        numNextPagesShown = Math.Min(5 - Model.Page, Model.PageCount - Model.Page);
+    }
+
+    if (Model.PageCount - Model.Page < 2)
+    {
+        numNextPagesShown = Model.PageCount - Model.Page;
+        numPreviousPagesShown = Math.Min(4 - (Model.PageCount - Model.Page), Model.Page - 1);
+    }
+}
+
+@functions
+{
+
+    private object CreateRoutingValues(int page)
+    {
+        return new
+        {
+            Page = page,
+            PageSize = Model.PageSize
+        };
+    }
+}
+
+<div class="row">
+    <div class="col-xs-12 text-center">
+        <ul class="pagination pagination-sm">
+            @if (!enablePreviousPage)
+            {
+                <li class="disabled"><a href="#">Previous</a></li>
+            }
+            else
+            {
+                <li>@Html.ActionLink("Previous", "Index", CreateRoutingValues(Model.Page - 1))</li>
+            }
+
+            @for (int i = Model.Page - numPreviousPagesShown; i < Model.Page; ++i)
+            {
+                <li>@Html.ActionLink(i.ToString(), "Index", CreateRoutingValues(i))</li>
+            }
+
+            <li class="active">@Html.ActionLink(Model.Page.ToString(), "Index",
+                                   CreateRoutingValues(Model.Page))</li>
+
+            @for (int i = Model.Page + 1; i <= Model.Page + numNextPagesShown; ++i)
+            {
+                <li>@Html.ActionLink(i.ToString(), "Index", CreateRoutingValues(i))</li>
+            }
+
+            @if (!enableNextPage)
+            {
+                <li class="disabled"><a href="#">Next</a></li>
+            }
+            else
+            {
+                <li>@Html.ActionLink("Next", "Index", CreateRoutingValues(Model.Page + 1))</li>
+            }
+        </ul>
+    </div>
+</div>
+

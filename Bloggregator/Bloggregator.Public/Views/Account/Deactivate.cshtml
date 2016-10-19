@@ -1,0 +1,26 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_EditAccountLayout.cshtml";
+    ViewBag.ActiveView = "Deactivate";
+}
+
+<!-- Deactivate account -->
+<div class="panel panel-default">
+
+    <div class="panel-heading">
+        <div class="panel-title"><b>Deactivate account</b></div>
+    </div>
+
+    <div class="panel-body">
+        <p class="account-text">
+            <b>Do you really want to deactivate your account?</b>
+        </p>
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary()
+            <button class="btn btn-sm btn-blogBuddy" type="submit">Deactivate</button>
+        }
+    </div>
+
+</div>

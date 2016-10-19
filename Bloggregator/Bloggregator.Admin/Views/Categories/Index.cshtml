@@ -1,0 +1,62 @@
+﻿@using Bloggregator.Admin.Models
+@model Bloggregator.AppServices.Features.Admin.Category.List.Response
+
+@{
+    ViewBag.Title = "Categories Review";
+}
+
+<h3 style="color: #F67C00">Categories</h3>
+<hr />
+<div class="row">
+    <div class="col-sm-4 col-md-3">
+        @Html.ActionLink("Add new category", "Add", "Categories", null, new { @class = "btn btn-default form-control" })
+    </div>
+</div>
+<br />
+<!-- Sources -->
+<div class="row">
+    <div class="col-xs-12">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th class="col-xs-10 col-sm-6 blogBuddy-th">Name</th>
+                            @*<th class="hidden-xs col-sm-2 blogBuddy-th">Sources</th>
+                                <th class="hidden-xs col-sm-3 blogBuddy-th">Articles</th>*@
+                            <th class="col-xs-2 col-sm-1 blogBuddy-th text-center">Enable/Disable</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        @foreach (var category in Model.Categories)
+                        {
+
+                            <tr class="@(!category.IsActive ? "active" : "")">
+                                <td class="blogBuddy-td">@category.Name</td>
+                                @*<td class="hidden-xs blogBuddy-td">@category.NumSources</td>
+                                    <td class="hidden-xs blogBuddy-td">@category.NumArticles</td>*@
+                                <td class="blogBuddy-td text-center">
+                                    <a href="@Url.Action("Edit","Categories", new { CategoryId = category.Id, IsActive = !category.IsActive })">
+                                        <span class="glyphicon glyphicon-@(category.IsActive ? "remove" : "ok") blogBuddy-glyp" data-category-id="@category.Id"
+                                              data-category-enable="false"></span>
+                                    </a>
+                                </td>
+                            </tr>
+
+                        }
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- pagination -->
+@Html.Partial("_Pagination", new PaginationModel()
+{
+    PageCount = Model.PageCount,
+    Page = Model.Page,
+    PageSize = Model.PageSize
+})

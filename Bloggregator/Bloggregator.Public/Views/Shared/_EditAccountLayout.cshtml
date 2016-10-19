@@ -1,0 +1,58 @@
+﻿@{
+    ViewBag.Title = "Account | BlogBuddy";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@functions
+{
+    public string MenuItemCssClass(string viewName)
+    {
+        if (ViewBag.ActiveView == viewName)
+        {
+            return "list-group-item active";
+        }
+        else
+        {
+            return "list-group-item";
+        }
+    }
+}
+
+<!-- Header -->
+<div>
+    <div class="col-xs-12 favorites-header">
+        <b>Account</b>
+    </div>
+</div>
+
+<!-- Settings -->
+<div >
+
+    <!-- sidebar -->
+    <div class="col-xs-12 col-sm-4 col-md-3">
+
+        <div class="list-group" id="sidebar">
+            <!-- if user is logged in with email then this item is ".active" and item below is ".disabled"
+                 if user is logged in with some service then vice versa -->
+            @Html.ActionLink("Password", "Manage", "Account", null,
+                new { @class = MenuItemCssClass("ChangePassword") })
+            <a data-id="third-party" class="list-group-item disabled">Third-party login</a>
+            @Html.ActionLink("Deactivate account", "Deactivate", "Account", null, new
+       {
+           @class = MenuItemCssClass("Deactivate")
+       })
+        </div>
+
+    </div>
+
+
+    <!-- main -->
+    <div class="col-xs-12 col-sm-8 col-md-9">
+        @RenderBody()
+    </div>
+</div>
+
+@section scripts {
+
+    @Scripts.Render("~/bundles/jqueryval")
+}

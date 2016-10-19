@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Manage | BlogBuddy</title>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- favicon -->
+    <link rel="icon" href="../images/favicon.ico">
+
+    <!-- CSS -->
+    <!-- Bootstrap css -->
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <!-- BlogBuddy_User css -->
+    <link rel="stylesheet" href="../css/blogBuddy_user.css">
+
+
+    <!-- JS -->
+    <!-- jQuery library -->
+    <script src="../js/jquery.js"></script>
+    <!-- Bootstrap js -->
+    <script src="../js/bootstrap.js"></script>
+    <!-- BlogBuddy_User js -->
+    <script src="../js/blogBuddy_user.js"></script>
+</head>
+<body>
+
+<!-- navbar -->
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <!-- header -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse"
+                    aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="home-logged.html">
+                <img alt="Brand" src="../images/brand.png">
+            </a>
+        </div>
+
+        <!-- menu -->
+        <div class="collapse navbar-collapse" id="navbar-collapse">
+            <form class="navbar-form navbar-left">
+                <div class="input-group input-width">
+                    <input type="text" class="form-control form-search" placeholder="Search...">
+							<span class="input-group-btn">
+								<button class="btn btn-blogBuddy"><span class="glyphicon glyphicon-search"></span>
+                                </button>
+							</span>
+                </div>
+            </form>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false"><b>name.surname@mail.com <span class="caret"></span></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="account.html"><b><span
+                                class="glyphicon glyphicon-user"></span>&emsp;Account</b></a></li>
+                        <li><a href="favorites.html"><b><span
+                                class="glyphicon glyphicon-star"></span>&emsp;Favorites</b></a></li>
+                        <li class="active"><a><b><span class="glyphicon glyphicon-cog"></span>&emsp;Manage</b></a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="home.html"><b><span class="glyphicon glyphicon-off"></span>&emsp;Log Out</b></a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<div class="wrap">
+    <div class="container main">
+
+        <!-- Header -->
+        <div class="row">
+            <div class="col-xs-12 favorites-header">
+                <b>Manage</b>
+            </div>
+        </div>
+
+        <!-- categories and blogs -->
+        <div class="row">
+
+            <div class="panel-group col-xs-12" id="accordion" role="tablist" aria-multiselectable="true">
+
+                <!-- Panel collapse -->
+                <div class="panel panel-default">
+
+                    <div class="panel-heading">
+                        <div class="panel-title">
+                            <input type="checkbox" class="toggle-settings"/>
+                            <a data-toggle="collapse" href="#collapse_1">
+                                Music
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="panel-collapse collapse in" id="collapse_1">
+                        <div class="panel-body">
+                            <table class="table table-hover">
+
+                                <thead>
+                                    <tr>
+                                        <th class="col-xs-3 blogBuddy-th">Show/Hide</th>
+                                        <th class="col-xs-9 blogBuddy-th">Blog</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+
+                                    <!-- Table row -->
+                                    <tr>
+                                        <td><input type="checkbox" class="toggle-settings-sources"/></td>
+                                        <td class="blogBuddy-td">
+                                            <a class="home-a" target="_blank" href="http://taneshaawasthi.com/">Tanesha Awasthi</a>
+                                        </td>
+                                    </tr>
+                                    <!-- Table row -->
+
+                                    <!-- Examples -->
+                                    <tr>
+                                        <td><input type="checkbox" class="toggle-settings-sources"/></td>
+                                        <td class="blogBuddy-td">
+                                            <a class="home-a" target="_blank" href="http://taneshaawasthi.com/">Tanesha Awasthi</a>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td><input type="checkbox" class="toggle-settings-sources"/></td>
+                                        <td class="blogBuddy-td">
+                                            <a class="home-a" target="_blank" href="http://taneshaawasthi.com/">Tanesha Awasthi</a>
+                                        </td>
+                                    </tr>
+                                    <!-- Examples -->
+
+                                </tbody>
+
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- Panel collapse -->
+
+
+
+
+                <!-- EXAMPLES -->
+                <div class="panel panel-default">
+
+                    <div class="panel-heading">
+                        <div class="panel-title">
+                            <input type="checkbox" class="toggle-settings"/>
+                            <a data-toggle="collapse" href="#collapse_2">
+                                Sport
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="panel-collapse collapse in" id="collapse_2">
+                        <div class="panel-body">
+                            <table class="table table-hover">
+
+                                <thead>
+                                <tr>
+                                    <th class="col-xs-3 blogBuddy-th">Show/Hide</th>
+                                    <th class="col-xs-9 blogBuddy-th">Blog</th>
+                                </tr>
+                                </thead>
+
+                                <tbody>
+
+                                <!-- Table row -->
+                                <tr>
+                                    <td><input type="checkbox" class="toggle-settings-sources"/></td>
+                                    <td class="blogBuddy-td">
+                                        <a class="home-a" target="_blank" href="http://taneshaawasthi.com/">Tanesha Awasthi</a>
+                                    </td>
+                                </tr>
+                                <!-- Table row -->
+
+                                <!-- Examples -->
+                                <tr>
+                                    <td><input type="checkbox" class="toggle-settings-sources"/></td>
+                                    <td class="blogBuddy-td">
+                                        <a class="home-a" target="_blank" href="http://taneshaawasthi.com/">Tanesha Awasthi</a>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td><input type="checkbox" class="toggle-settings-sources"/></td>
+                                    <td class="blogBuddy-td">
+                                        <a class="home-a" target="_blank" href="http://taneshaawasthi.com/">Tanesha Awasthi</a>
+                                    </td>
+                                </tr>
+                                <!-- Examples -->
+
+                                </tbody>
+
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="panel panel-default">
+
+                    <div class="panel-heading">
+                        <div class="panel-title">
+                            <input type="checkbox" class="toggle-settings"/>
+                            <a data-toggle="collapse" href="#collapse_3">
+                                Movie
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="panel-collapse collapse in" id="collapse_3">
+                        <div class="panel-body">
+                            <table class="table table-hover">
+
+                                <thead>
+                                <tr>
+                                    <th class="col-xs-3 blogBuddy-th">Show/Hide</th>
+                                    <th class="col-xs-9 blogBuddy-th">Blog</th>
+                                </tr>
+                                </thead>
+
+                                <tbody>
+
+                                <!-- Table row -->
+                                <tr>
+                                    <td><input type="checkbox" class="toggle-settings-sources"/></td>
+                                    <td class="blogBuddy-td">
+                                        <a class="home-a" target="_blank" href="http://taneshaawasthi.com/">Tanesha Awasthi</a>
+                                    </td>
+                                </tr>
+                                <!-- Table row -->
+
+                                <!-- Examples -->
+                                <tr>
+                                    <td><input type="checkbox" class="toggle-settings-sources"/></td>
+                                    <td class="blogBuddy-td">
+                                        <a class="home-a" target="_blank" href="http://taneshaawasthi.com/">Tanesha Awasthi</a>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td><input type="checkbox" class="toggle-settings-sources"/></td>
+                                    <td class="blogBuddy-td">
+                                        <a class="home-a" target="_blank" href="http://taneshaawasthi.com/">Tanesha Awasthi</a>
+                                    </td>
+                                </tr>
+                                <!-- Examples -->
+
+                                </tbody>
+
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- EXAMPLES -->
+
+
+
+
+                <!-- Save button -->
+                <div class="row manage-btn">
+                    <div class="col-xs-12 text-center">
+                        <button type="button"class="btn btn-lg btn-blogBuddy">
+                            Save &nbsp;
+                            <span class="glyphicon glyphicon-floppy-disk"></span>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<!-- footer -->
+<footer class="footer">
+    <div class="container text-center">
+        <a href="about.html" class="footer-a">About</a>
+        <span class="or">&bull;</span>
+        <a href="contact.html" class="footer-a">Contact</a>
+        <h6 class="footer-margin">BlogBuddy &copy; 2016</h6>
+    </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,69 @@
+﻿@using Bloggregator.Admin.Models
+@model Bloggregator.AppServices.Features.Admin.Source.List.Response
+
+@{
+    ViewBag.Title = "Sources Review";
+}
+
+<h3 style="color: #F67C00">Sources</h3>
+<hr />
+<div class="row">
+    <div class="col-sm-4 col-md-3">
+        @Html.ActionLink("Add new source", "Add", null,
+                            new { @class = "btn btn-default btn-block form-control" })
+    </div>
+</div>
+<br />
+
+<div class="row">
+    <div class="col-xs-12">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                @Html.ValidationSummary()
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th class="col-xs-10 col-sm-4 blogBuddy-th">Name</th>
+                            <th class="hidden-xs col-sm-4 blogBuddy-th">Url</th>
+                            <th class="hidden-xs col-sm-2 blogBuddy-th">Category</th>
+                            <th class="hidden-xs col-sm-2 blogBuddy-th">Category Status</th>
+                            @*<th class="hidden-xs col-sm-1 blogBuddy-th">Articles</th>*@
+                            <th class="col-xs-2 col-sm-1 blogBuddy-th text-center">Enable/Disable</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        @foreach (var source in Model.Sources)
+                        {
+
+                            <tr class="@(!source.IsActive ? "active" : "")">
+                                <td class="blogBuddy-td">@source.Name</td>
+                                <td class="hidden-xs"><a target="_blank" href="@source.Url">@source.Url</a></td>
+                                <td class="hidden-xs blogBuddy-td">@source.CategoryName</td>
+                                <td class="hidden-xs blogBuddy-td">@(source.CategoryIsActive ? "Active" : "Inactive")</td>
+                                @*<td class="hidden-xs blogBuddy-td">@source.NumArticles</td>*@
+                                <td class="blogBuddy-td text-center">
+                                    @if(source.CategoryIsActive)
+                                    {
+                                        <a href="@Url.Action("Edit","Sources", new { SourceId = source.Id, IsActive = !source.IsActive })">
+                                            <span class="glyphicon glyphicon-@(source.IsActive ? "remove" : "ok") blogBuddy-glyp active"
+                                                    data-source-id="@source.Id" data-source-enable="true"></span>
+                                        </a>
+                                    }
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- pagination -->
+@Html.Partial("_Pagination", new PaginationModel()
+{
+    Page = Model.Page,
+    PageCount = Model.PageCount,
+    PageSize = Model.PageSize
+})

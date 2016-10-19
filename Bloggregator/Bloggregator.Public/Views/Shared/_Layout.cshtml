@@ -1,0 +1,92 @@
+﻿<!DOCTYPE html>
+<html>
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+
+    <!-- favicons for all devices -->
+    <link rel="apple-touch-icon" sizes="57x57" href="/images/favicon/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/images/favicon/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/images/favicon/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/images/favicon/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/images/favicon/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/images/favicon/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/images/favicon/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/images/favicon/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon-180x180.png">
+    <link rel="icon" type="image/png" href="/images/favicon/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/images/favicon/favicon-194x194.png" sizes="194x194">
+    <link rel="icon" type="image/png" href="/images/favicon/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="/images/favicon/android-chrome-192x192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="/images/favicon/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="/images/favicon/manifest.json">
+    <link rel="mask-icon" href="/images/favicon/safari-pinned-tab.svg" color="#f67c00">
+    <meta name="apple-mobile-web-app-title" content="BlogBuddy">
+    <meta name="application-name" content="BlogBuddy">
+    <meta name="msapplication-TileColor" content="#f67c00">
+    <meta name="msapplication-TileImage" content="/images/favicon/mstile-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- the open graph protocol -->
+    <meta property="og:title" content="BlogBuddy" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="http://mtrajk.github.io/BlogBuddy/" />  <!-- da se smeni linkot koga ke se hostira -->
+    <meta property="og:image" content="http://mtrajk.github.io/BlogBuddy/images/ogp_image.png" /> <!-- da se smeni linkot koga ke se hostira -->
+    <meta property="og:site_name" content="BlogBuddy" />
+    <meta property="og:description" content="Your best buddy for aggregating blogs!" />
+
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <!-- header -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="@Url.Action("Index","Home",null)">
+                    <img alt="Brand" src="@Url.Content("~/images/brand.png")">
+                </a>
+            </div>
+
+            <!-- menu -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </nav>
+
+    <div class="wrap">
+        <div class="container main">
+
+            <div class="wrap row">
+                @RenderBody()
+            </div>
+            <hr />
+            <!-- footer -->
+
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container text-center">
+            <a href="@Url.Action("About", "Home")" class="footer-a">About</a>
+            <span class="or">&bull;</span>
+            <a href="@Url.Action("Contact", "Home")" class="footer-a">Contact</a>
+            <h6 class="footer-margin">BlogBuddy &copy; 2016</h6>
+        </div>
+    </footer>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/app")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

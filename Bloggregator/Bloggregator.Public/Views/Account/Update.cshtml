@@ -1,0 +1,154 @@
+﻿
+@{
+    ViewBag.Title = "Account settings";
+}
+
+        <!-- Header -->
+        <div class="row">
+            <div class="col-xs-12 favorites-header">
+                <b>Account</b>
+            </div>
+        </div>
+
+        <!-- Settings -->
+        <div class="row">
+
+            <!-- sidebar -->
+            <div class="col-xs-12 col-sm-4 col-md-3">
+
+                <div class="list-group" id="sidebar">
+                    <!-- if user is logged in with email then this item is ".active" and item below is ".disabled"
+                         if user is logged in with some service then vice versa -->
+                    <a data-id="email" class="list-group-item active">Email & password</a>
+                    <a data-id="third-party" class="list-group-item disabled">Third-party login</a>
+                    <a data-id="deactivate" class="list-group-item">Deactivate account</a>
+                </div>
+
+            </div>
+
+
+            <!-- main -->
+            <div class="col-xs-12 col-sm-8 col-md-9">
+
+
+                <!-- Email % password -->
+                <div class="panel panel-default" id="email">
+
+                    <div class="panel-heading">
+                        <div class="panel-title"><b>Email & password</b></div>
+                    </div>
+
+                    <div class="panel-body">
+
+                        <!-- change password -->
+                        <div class="account-change">
+
+                            <div class="col-xs-12">
+                                <p class="account-text"><b>Change Password</b></p>
+                            </div>
+
+                            <div class="col-xs-12 form-margin">
+                                <div class="control-group">
+                                    <div class="input-group">
+                                        <input type="password" class="form-control" placeholder="Current Password">
+                                        <span class="input-group-addon"><span class="glyphicon glyphicon-lock user-glyp"></span></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-xs-12 form-margin">
+                                <div class="control-group">
+                                    <div class="input-group">
+                                        <input type="password" class="form-control" placeholder="New password">
+                                        <span class="input-group-addon"><span class="glyphicon glyphicon-lock user-glyp"></span></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-xs-12 form-margin">
+                                <div class="control-group">
+                                    <div class="input-group">
+                                        <input type="password" class="form-control" placeholder="Confirm Password">
+                                        <span class="input-group-addon"><span class="glyphicon glyphicon-lock user-glyp"></span></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                        <!-- change email -->
+                        <div class="account-change">
+
+                            <div class="col-xs-12">
+                                <p class="account-text"><b>Change Email</b></p>
+                            </div>
+
+                            <div class="col-xs-12 form-margin">
+                                <p class="account-email">Your current email address: <i> name.surname@mail.com </i></p>
+                            </div>
+
+                            <div class="col-xs-12 admin-margin controls">
+                                <div class="input-group">
+                                    <input type="password" class="form-control" placeholder="Set your new e-mail address">
+                                    <span class="input-group-addon admin-margin"><span class="glyphicon glyphicon-envelope user-glyp"></span></span>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                        <div class="account-btn">
+                            <div class="col-xs-12">
+                                <button type="button" class="btn btn-block form-control btn-blogBuddy">
+                                    Save &nbsp;
+                                    <span class="glyphicon glyphicon-floppy-disk"></span>
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+
+                <!-- Third-party login -->
+                <div class="panel panel-default blogBuddy-hide" id="third-party">
+
+                    <div class="panel-heading">
+                        <div class="panel-title"><b>Third-party login</b></div>
+                    </div>
+
+                    <div class="panel-body">
+                        <p class="account-text"><b>You are logged in from:</b></p>
+
+                        <div class="label tp-facebook tp"><i class="fa fa-lg fa-facebook"></i><span class="fa-margin">Facebook</span></div>
+
+                        <!-- if user is logged in from twitter or google+ only remove "hidden" class, and add same class up to facebook label -->
+                        <div class="label tp-twitter tp hidden"><i class="fa fa-lg fa-twitter"></i><span class="fa-margin">Twitter</span></div>
+                        <div class="label tp-google tp hidden"><i class="fa fa-lg fa-google-plus"></i><span class="fa-margin">Google+</span></div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Deactivate account -->
+                <div class="panel panel-default blogBuddy-hide" id="deactivate">
+
+                    <div class="panel-heading">
+                        <div class="panel-title"><b>Deactivate account</b></div>
+                    </div>
+
+                    <div class="panel-body">
+                        <p class="account-text"><b>Do you really want to deactivate your account?</b></p>
+                        <button class="btn btn-sm btn-blogBuddy">Deactivate</button>
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+ 

@@ -1,0 +1,59 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bloggregator.Public", "Bloggregator.Public\Bloggregator.Public.csproj", "{13A88EE0-E797-4FA2-BCE8-8841C04476EA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bloggregator.Framework", "Bloggregator.Framework\Bloggregator.Framework.csproj", "{B2F086CD-8192-4897-9BF0-1AAAAB79318E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bloggregator.AppServices", "Bloggregator.AppServices\Bloggregator.AppServices.csproj", "{4435EA4C-9479-477D-9989-D266070A01E8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Applications", "Applications", "{223AA52F-943A-4ABB-9760-0117B556E6A8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bloggregator.Domain", "Bloggregator.Domain\Bloggregator.Domain.csproj", "{3916FE0F-4366-41C4-8275-03B4DF05F6F0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bloggregator.Admin", "Bloggregator.Admin\Bloggregator.Admin.csproj", "{627AF03D-A655-4343-A5EF-A7000844F732}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bloggregator.Crawler", "Bloggregator.Crawler\Bloggregator.Crawler.csproj", "{D443C305-795C-4507-854B-63440AD0C6E2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{13A88EE0-E797-4FA2-BCE8-8841C04476EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13A88EE0-E797-4FA2-BCE8-8841C04476EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13A88EE0-E797-4FA2-BCE8-8841C04476EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13A88EE0-E797-4FA2-BCE8-8841C04476EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2F086CD-8192-4897-9BF0-1AAAAB79318E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2F086CD-8192-4897-9BF0-1AAAAB79318E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2F086CD-8192-4897-9BF0-1AAAAB79318E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2F086CD-8192-4897-9BF0-1AAAAB79318E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4435EA4C-9479-477D-9989-D266070A01E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4435EA4C-9479-477D-9989-D266070A01E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4435EA4C-9479-477D-9989-D266070A01E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4435EA4C-9479-477D-9989-D266070A01E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3916FE0F-4366-41C4-8275-03B4DF05F6F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3916FE0F-4366-41C4-8275-03B4DF05F6F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3916FE0F-4366-41C4-8275-03B4DF05F6F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3916FE0F-4366-41C4-8275-03B4DF05F6F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{627AF03D-A655-4343-A5EF-A7000844F732}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{627AF03D-A655-4343-A5EF-A7000844F732}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{627AF03D-A655-4343-A5EF-A7000844F732}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{627AF03D-A655-4343-A5EF-A7000844F732}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D443C305-795C-4507-854B-63440AD0C6E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D443C305-795C-4507-854B-63440AD0C6E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D443C305-795C-4507-854B-63440AD0C6E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D443C305-795C-4507-854B-63440AD0C6E2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{13A88EE0-E797-4FA2-BCE8-8841C04476EA} = {223AA52F-943A-4ABB-9760-0117B556E6A8}
+		{627AF03D-A655-4343-A5EF-A7000844F732} = {223AA52F-943A-4ABB-9760-0117B556E6A8}
+		{D443C305-795C-4507-854B-63440AD0C6E2} = {223AA52F-943A-4ABB-9760-0117B556E6A8}
+	EndGlobalSection
+EndGlobal

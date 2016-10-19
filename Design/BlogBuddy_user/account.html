@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Account | BlogBuddy</title>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- favicon -->
+    <link rel="icon" href="../images/favicon.ico">
+
+    <!-- CSS -->
+    <!-- Bootstrap css -->
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <!-- Font-Awesome -->
+    <link rel="stylesheet" type="text/css" href="../fonts/css/font-awesome.min.css">
+    <!-- BlogBuddy_User css -->
+    <link rel="stylesheet" href="../css/blogBuddy_user.css">
+
+
+    <!-- JS -->
+    <!-- jQuery library -->
+    <script src="../js/jquery.js"></script>
+    <!-- Bootstrap js -->
+    <script src="../js/bootstrap.js"></script>
+    <!-- BlogBuddy_User js -->
+    <script src="../js/blogBuddy_user.js"></script>
+</head>
+<body>
+
+<!-- navbar -->
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <!-- header -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse"
+                    aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="home-logged.html">
+                <img alt="Brand" src="../images/brand.png">
+            </a>
+        </div>
+
+        <!-- menu -->
+        <div class="collapse navbar-collapse" id="navbar-collapse">
+            <form class="navbar-form navbar-left">
+                <div class="input-group input-width">
+                    <input type="text" class="form-control form-search" placeholder="Search...">
+							<span class="input-group-btn">
+								<button class="btn btn-blogBuddy"><span class="glyphicon glyphicon-search"></span>
+                                </button>
+							</span>
+                </div>
+            </form>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false"><b>name.surname@mail.com <span class="caret"></span></b></a>
+                    <ul class="dropdown-menu">
+                        <li class="active"><a><b><span class="glyphicon glyphicon-user"></span>&emsp;Account</b></a>
+                        </li>
+                        <li><a href="favorites.html"><b><span
+                                class="glyphicon glyphicon-star"></span>&emsp;Favorites</b></a></li>
+                        <li><a href="manage.html"><b><span class="glyphicon glyphicon-cog"></span>&emsp;Manage</b></a>
+                        </li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="home.html"><b><span class="glyphicon glyphicon-off"></span>&emsp;Log Out</b></a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<div class="wrap">
+    <div class="container main">
+
+        <!-- Header -->
+        <div class="row">
+            <div class="col-xs-12 favorites-header">
+                <b>Account</b>
+            </div>
+        </div>
+
+        <!-- Settings -->
+        <div class="row">
+
+            <!-- sidebar -->
+            <div class="col-xs-12 col-sm-4 col-md-3">
+
+                <div class="list-group" id="sidebar">
+                    <!-- if user is logged in with email then this item is ".active" and item below is ".disabled"
+                         if user is logged in with some service then vice versa -->
+                    <a data-id="email" class="list-group-item active">Email & password</a>
+                    <a data-id="third-party" class="list-group-item disabled">Third-party login</a>
+                    <a data-id="deactivate" class="list-group-item">Deactivate account</a>
+                </div>
+
+            </div>
+
+
+            <!-- main -->
+            <div class="col-xs-12 col-sm-8 col-md-9">
+
+
+                <!-- Email % password -->
+                <div class="panel panel-default" id="email">
+
+                    <div class="panel-heading">
+                        <div class="panel-title"><b>Email & password</b></div>
+                    </div>
+
+                    <div class="panel-body">
+
+                        <!-- change password -->
+                        <div class="account-change">
+
+                            <div class="col-xs-12">
+                                <p class="account-text"><b>Change Password</b></p>
+                            </div>
+
+                            <div class="col-xs-12 form-margin">
+                                <div class="control-group">
+                                    <div class="input-group">
+                                        <input type="password" class="form-control" placeholder="Current Password">
+                                        <span class="input-group-addon"><span class="glyphicon glyphicon-lock user-glyp"></span></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-xs-12 form-margin">
+                                <div class="control-group">
+                                    <div class="input-group">
+                                        <input type="password" class="form-control" placeholder="New password">
+                                        <span class="input-group-addon"><span class="glyphicon glyphicon-lock user-glyp"></span></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-xs-12 form-margin">
+                                <div class="control-group">
+                                        <div class="input-group">
+                                            <input type="password" class="form-control" placeholder="Confirm Password">
+                                            <span class="input-group-addon"><span class="glyphicon glyphicon-lock user-glyp"></span></span>
+                                        </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                        <!-- change email -->
+                        <div class="account-change">
+
+                            <div class="col-xs-12">
+                                <p class="account-text"><b>Change Email</b></p>
+                            </div>
+
+                            <div class="col-xs-12 form-margin">
+                                <p class="account-email">Your current email address: <i> name.surname@mail.com </i></p>
+                            </div>
+
+                            <div class="col-xs-12 admin-margin controls">
+                                <div class="input-group">
+                                    <input type="password" class="form-control" placeholder="Set your new e-mail address">
+                                    <span class="input-group-addon admin-margin"><span class="glyphicon glyphicon-envelope user-glyp"></span></span>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                        <div class="account-btn">
+                            <div class="col-xs-12">
+                                <button type="button"class="btn btn-block form-control btn-blogBuddy">
+                                    Save &nbsp;
+                                    <span class="glyphicon glyphicon-floppy-disk"></span>
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+
+                <!-- Third-party login -->
+                <div class="panel panel-default blogBuddy-hide" id="third-party">
+
+                    <div class="panel-heading">
+                        <div class="panel-title"><b>Third-party login</b></div>
+                    </div>
+
+                    <div class="panel-body">
+                        <p class="account-text"><b>You are logged in from:</b></p>
+
+                        <div class="label tp-facebook tp"><i class="fa fa-lg fa-facebook"></i><span class="fa-margin">Facebook</span></div>
+
+                        <!-- if user is logged in from twitter or google+ only remove "hidden" class, and add same class up to facebook label -->
+                        <div class="label tp-twitter tp hidden"><i class="fa fa-lg fa-twitter"></i><span class="fa-margin">Twitter</span></div>
+                        <div class="label tp-google tp hidden"><i class="fa fa-lg fa-google-plus"></i><span class="fa-margin">Google+</span></div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Deactivate account -->
+                <div class="panel panel-default blogBuddy-hide" id="deactivate">
+
+                    <div class="panel-heading">
+                        <div class="panel-title"><b>Deactivate account</b></div>
+                    </div>
+
+                    <div class="panel-body">
+                        <p class="account-text"><b>Do you really want to deactivate your account?</b></p>
+                        <button class="btn btn-sm btn-blogBuddy">Deactivate</button>
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- footer -->
+<footer class="footer">
+    <div class="container text-center">
+        <a href="about.html" class="footer-a">About</a>
+        <span class="or">&bull;</span>
+        <a href="contact.html" class="footer-a">Contact</a>
+        <h6 class="footer-margin">BlogBuddy &copy; 2016</h6>
+    </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,28 @@
+﻿@using Bloggregator.Public.Models
+@{
+    ViewBag.Title = "Log In | BlogBuddy";
+
+    if (ViewBag.ReturnUrl == null)
+    {
+        ViewBag.ReturnUrl = Url.Action("Index", "Home");
+    }
+
+    Layout = "~/Views/Shared/_RegisterLoginLayout.cshtml";
+}
+
+@using (Html.BeginForm(new { ReturnUrl = ViewBag.ReturnUrl }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary()
+    @Html.Partial("_ExternalLoginPartial", new ExternalLoginHelperModel()
+{
+    FacebookProviderText = "Log In with Facebook",
+    TwitterProviderText = "Log In with Twitter",
+    GoogleProviderText = "Log In with Google+"
+})
+    <div class="col-xs-12 text-center marg">
+        @Html.ActionLink("Log In with Email", "Login", null, new { @class = "blogBuddy-a" })
+        <span class="or">or</span>
+        @Html.ActionLink("Register", "ExternalRegister", "Account", null, new { @class = "blogBuddy-a" })
+    </div>
+}

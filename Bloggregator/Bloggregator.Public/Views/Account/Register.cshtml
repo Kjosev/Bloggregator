@@ -1,0 +1,40 @@
+﻿@model Bloggregator.Public.Models.RegisterViewModel
+@{
+    ViewBag.Title = "Register | BlogBuddy";
+    Layout = "~/Views/Shared/_RegisterLoginLayout.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary()
+    <div class="col-xs-12 form-margin">
+        @Html.ValidationMessageFor(m => m.Email)
+        <div class="input-group">
+            @Html.TextBoxFor(m => m.Email, new { @class = "form-control", placeholder = Html.DisplayNameFor(m => m.Email) })
+            <span class="input-group-addon"><span class="glyphicon glyphicon-envelope user-glyp"></span></span>
+        </div>
+    </div>
+    <div class="col-xs-12 form-margin">
+        @Html.ValidationMessageFor(m => m.Password)
+        <div class="input-group">
+            @Html.PasswordFor(m => m.Password, new { @class = "form-control", placeholder = Html.DisplayNameFor(m => m.Password) })
+            <span class="input-group-addon"><span class="glyphicon glyphicon-lock user-glyp"></span></span>
+        </div>
+    </div>
+    <div class="col-xs-12 form-margin">
+        @Html.ValidationMessageFor(m => m.ConfirmPassword)
+        <div class="input-group">
+            @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control", placeholder = Html.DisplayNameFor(m => m.ConfirmPassword) })
+            <span class="input-group-addon"><span class="glyphicon glyphicon-lock user-glyp"></span></span>
+        </div>
+    </div>
+    <div class="col-xs-12 form-btn-margin">
+        <button type="submit" class="btn btn-block form-control btn-blogBuddy">Register</button>
+    </div>
+    <div class="col-xs-12 text-center marg">
+        @Html.ActionLink("Register with Service", "ExternalRegister", null, new { @class = "blogBuddy-a" })
+        <span class="or">or</span>
+        @Html.ActionLink("Log In", "Login", "Account", null, new { @class = "blogBuddy-a" })
+    </div>
+}

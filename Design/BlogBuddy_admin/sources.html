@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Sources | BlogBuddy Administration</title>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- favicon -->
+    <link rel="icon" href="../images/favicon.ico">
+
+    <!-- CSS -->
+    <!-- Bootstrap css -->
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <!-- BlogBuddy_Admin css -->
+    <link rel="stylesheet" href="../css/blogBuddy_admin.css">
+
+    <!-- JS -->
+    <!-- jQuery library -->
+    <script src="../js/jquery.js"></script>
+    <!-- Bootstrap js -->
+    <script src="../js/bootstrap.js"></script>
+    <!-- BlogBuddy_Admin js -->
+    <script src="../js/blogBuddy_admin.js"></script>
+</head>
+<body>
+
+<!-- navbar -->
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <!-- header -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="home.html">
+                <img alt="Brand" src="../images/brand.png">
+            </a>
+        </div>
+
+        <!-- menu -->
+        <div class="collapse navbar-collapse" id="navbar-collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="users.html">Users</a></li>
+                <li><a href="articles.html">Articles</a></li>
+                <li><a href="categories.html">Categories</a></li>
+                <li class="active"><a>Sources</a></li>
+                <li><a href="login.html"><span class="glyphicon glyphicon-off"></span> Log Out </a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- main container -->
+<div class="container">
+
+    <!-- Add а new source -->
+    <div class="row">
+        <div class="col-xs-12 col-xs-offset-0 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <div class="panel-title">Add a new source</div>
+                </div>
+                <div class="panel-body">
+                    <div class="form-group-lg row">
+                        <div class="col-xs-12 col-sm-12">
+                            <input type="text" class="form-control" placeholder="URL">
+                        </div>
+                        <div class="col-xs-12 col-md-6">
+                            <input type="text" class="form-control" placeholder="Name">
+                        </div>
+                        <div class="col-xs-12  col-md-6">
+                            <select class="form-control blogBuddy-gray" id="selectCategory">
+                                <option disabled selected hidden class="blogBuddy-black">Category</option>
+                                <option class="blogBuddy-black">Fithness</option>
+                                <option class="blogBuddy-black">Fashion</option>
+                                <option class="blogBuddy-black">Music</option>
+                                <option class="blogBuddy-black">Movie</option>
+                            </select>
+                        </div>
+                        <div class="col-xs-12 col-sm-12">
+                            <button type="button" class="btn btn-default btn-block form-control"> Add </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sources -->
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th class="col-xs-10 col-sm-4 blogBuddy-th">Name</th>
+                                <th class="hidden-xs col-sm-4 blogBuddy-th">Url</th>
+                                <th class="hidden-xs col-sm-2 blogBuddy-th">Category</th>
+                                <th class="hidden-xs col-sm-1 blogBuddy-th">Articles</th>
+                                <th class="col-xs-2 col-sm-1 blogBuddy-th text-center">Disable</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            <!-- EXAMPLE OF DISABLED DATA ROW -->
+                            <tr class="disabled">
+                                <td class="blogBuddy-td">Fitt Bottomed Girls</td>
+                                <td class="hidden-xs"><a target="_blank" href="http://fitbottomedgirls.com/feed/">http://fitbottomedgirls.com/feed/</a></td>
+                                <td class="hidden-xs blogBuddy-td">Fitness</td>
+                                <td class="hidden-xs blogBuddy-td">231</td>
+                                <td class="blogBuddy-td text-center">
+                                    <span class="glyphicon glyphicon-remove blogBuddy-glyp-disabled"></span>
+                                </td>
+                            </tr>
+                            <!-- EXAMPLE OF DISABLED DATA ROW -->
+
+                            <!-- EXAMPLE OF DATA ROW -->
+                            <tr>
+                                <td class="blogBuddy-td">Fitt Bottomed Girls</td>
+                                <td class="hidden-xs"><a target="_blank" href="http://fitbottomedgirls.com/feed/">http://fitbottomedgirls.com/feed/</a></td>
+                                <td class="hidden-xs blogBuddy-td">Fitness</td>
+                                <td class="hidden-xs blogBuddy-td">231</td>
+                                <td class="blogBuddy-td text-center">
+                                    <span class="glyphicon glyphicon-minus blogBuddy-glyp"></span>
+                                </td>
+                            </tr>
+                            <!-- EXAMPLE OF DATA ROW -->
+
+
+                            <!-- UNNECESSARY -->
+                            <tr>
+                                <td class="blogBuddy-td">Nerd Fitness</td>
+                                <td class="hidden-xs"><a target="_blank" href="http://www.nerdfitness.com/feed/">http://www.nerdfitness.com/feed/</a></td>
+                                <td class="hidden-xs blogBuddy-td">Fitness</td>
+                                <td class="hidden-xs blogBuddy-td">231</td>
+                                <td class="blogBuddy-td text-center">
+                                    <span class="glyphicon glyphicon-minus blogBuddy-glyp"></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="blogBuddy-td">Remodel Fitness</td>
+                                <td class="hidden-xs"><a target="_blank" href="http://jessikneeland.com/feed/">http://jessikneeland.com/feed/</a></td>
+                                <td class="hidden-xs blogBuddy-td">Fitness</td>
+                                <td class="hidden-xs blogBuddy-td">231</td>
+                                <td class="blogBuddy-td text-center">
+                                    <span class="glyphicon glyphicon-minus blogBuddy-glyp"></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="blogBuddy-td">Roman Fitness Systems</td>
+                                <td class="hidden-xs"><a target="_blank" href="http://romanfitnesssystems.com/feed/">http://romanfitnesssystems.com/feed/</a></td>
+                                <td class="hidden-xs blogBuddy-td">Fitness</td>
+                                <td class="hidden-xs blogBuddy-td">231</td>
+                                <td class="blogBuddy-td text-center">
+                                    <span class="glyphicon glyphicon-minus blogBuddy-glyp"></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="blogBuddy-td">Hello Fashion</td>
+                                <td class="hidden-xs"><a target="_blank" href=http://www.hellofashionblog.com/feed/">http://www.hellofashionblog.com/feed/</a></td>
+                                <td class="hidden-xs blogBuddy-td">Fashion</td>
+                                <td class="hidden-xs blogBuddy-td">231</td>
+                                <td class="blogBuddy-td text-center">
+                                    <span class="glyphicon glyphicon-minus blogBuddy-glyp"></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="blogBuddy-td">Kyrzayda</td>
+                                <td class="hidden-xs"><a target="_blank" href="http://kyrzayda.com/feed/">http://kyrzayda.com/feed/</a></td>
+                                <td class="hidden-xs blogBuddy-td">Fashion</td>
+                                <td class="hidden-xs blogBuddy-td">231</td>
+                                <td class="blogBuddy-td text-center">
+                                    <span class="glyphicon glyphicon-minus blogBuddy-glyp"></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="blogBuddy-td">Style Me Grasie</td>
+                                <td class="hidden-xs"><a target="_blank" href="http://www.grasiemercedes.com/feed/">http://www.grasiemercedes.com/feed/</a></td>
+                                <td class="hidden-xs blogBuddy-td">Fashion</td>
+                                <td class="hidden-xs blogBuddy-td">231</td>
+                                <td class="blogBuddy-td text-center">
+                                    <span class="glyphicon glyphicon-minus blogBuddy-glyp"></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="blogBuddy-td">Tanesha Awasthi</td>
+                                <td class="hidden-xs"><a target="_blank" href="http://taneshaawasthi.com/feed/">http://taneshaawasthi.com/feed/</a></td>
+                                <td class="hidden-xs blogBuddy-td">Fashion</td>
+                                <td class="hidden-xs blogBuddy-td">231</td>
+                                <td class="blogBuddy-td text-center">
+                                    <span class="glyphicon glyphicon-minus blogBuddy-glyp"></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="blogBuddy-td">Consequence of Sound</td>
+                                <td class="hidden-xs"><a target="_blank" href="http://consequenceofsound.net/feed/">http://consequenceofsound.net/feed/</a></td>
+                                <td class="hidden-xs blogBuddy-td">Music</td>
+                                <td class="hidden-xs blogBuddy-td">231</td>
+                                <td class="blogBuddy-td text-center">
+                                    <span class="glyphicon glyphicon-minus blogBuddy-glyp"></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="blogBuddy-td">Stereogum</td>
+                                <td class="hidden-xs"><a target="_blank" href="http://www.stereogum.com/feed/">http://www.stereogum.com/feed/</a></td>
+                                <td class="hidden-xs blogBuddy-td">Music</td>
+                                <td class="hidden-xs blogBuddy-td">231</td>
+                                <td class="blogBuddy-td text-center">
+                                    <span class="glyphicon glyphicon-minus blogBuddy-glyp"></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="blogBuddy-td">Your EDM</td>
+                                <td class="hidden-xs"><a target="_blank" href="http://www.youredm.com/feed/">http://www.youredm.com/feed/</a></td>
+                                <td class="hidden-xs blogBuddy-td">Music</td>
+                                <td class="hidden-xs blogBuddy-td">231</td>
+                                <td class="blogBuddy-td text-center">
+                                    <span class="glyphicon glyphicon-minus blogBuddy-glyp"></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="blogBuddy-td">Popjustice</td>
+                                <td class="hidden-xs"><a target="_blank" href="http://www.popjustice.com/feed/">http://www.popjustice.com/feed/</a></td>
+                                <td class="hidden-xs blogBuddy-td">Music</td>
+                                <td class="hidden-xs blogBuddy-td">231</td>
+                                <td class="blogBuddy-td text-center">
+                                    <span class="glyphicon glyphicon-minus blogBuddy-glyp"></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="blogBuddy-td">/Film</td>
+                                <td class="hidden-xs"><a target="_blank" href="http://www.slashfilm.com/feed/">http://www.slashfilm.com/feed/</a></td>
+                                <td class="hidden-xs blogBuddy-td">Movie</td>
+                                <td class="hidden-xs blogBuddy-td">231</td>
+                                <td class="blogBuddy-td text-center">
+                                    <span class="glyphicon glyphicon-minus blogBuddy-glyp"></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="blogBuddy-td">FirstShowing.net</td>
+                                <td class="hidden-xs"><a target="_blank" href="http://www.firstshowing.net/feed/">http://www.firstshowing.net/feed/</a></td>
+                                <td class="hidden-xs blogBuddy-td">Movie</td>
+                                <td class="hidden-xs blogBuddy-td">231</td>
+                                <td class="blogBuddy-td text-center">
+                                    <span class="glyphicon glyphicon-minus blogBuddy-glyp"></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="blogBuddy-td">Curious Cat Investing and Economics Blog</td>
+                                <td class="hidden-xs"><a target="_blank" href="http://investing.curiouscatblog.net/feed/">http://investing.curiouscatblog.net/feed/</a></td>
+                                <td class="hidden-xs blogBuddy-td">Movie</td>
+                                <td class="hidden-xs blogBuddy-td">231</td>
+                                <td class="blogBuddy-td text-center">
+                                    <span class="glyphicon glyphicon-minus blogBuddy-glyp"></span>
+                                </td>
+                            </tr>
+                            <!-- UNNECESSARY -->
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- pagination -->
+    <div class="row">
+        <div class="col-xs-12 text-center">
+            <ul class="pagination pagination-sm">
+                <li class="disabled"><a href="#">Previous</a></li>
+                <li class="active"><a>1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li><a href="#">Next</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- footer -->
+<footer class="footer">
+    <div class="container">
+        <h6 class="text-center">BlogBuddy &copy; 2016</h6>
+    </div>
+</footer>
+
+</body>
+</html>

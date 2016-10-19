@@ -1,0 +1,95 @@
+﻿@model IList<Bloggregator.Domain.Entities.Categories.CategoryPermission>
+@{
+    ViewBag.Title = "Manage";
+    var collapseIndex = 1;
+}
+@if (TempData["Success"] != null)
+{
+    <p class="alert alert-success" id="successMessage">@TempData["Success"]</p>
+}
+    <div class="container main">
+
+        <!-- Header -->
+        <div class="row">
+            <div class="col-xs-12 favorites-header">
+                <b>Manage</b>
+            </div>
+        </div>
+
+        <!-- categories and blogs -->
+        <div class="row">
+            @using (Html.BeginForm())
+            {
+            <div class="panel-group col-xs-12" id="accordion" role="tablist" aria-multiselectable="true">
+                @for (int i = 0; i < Model.Count; ++i)
+                {
+                    @Html.HiddenFor(x => x[i].Id);
+                    @Html.HiddenFor(x => x[i].CategoryName);
+
+                    var category = Model[i];
+                <!-- Panel collapse -->
+                <div class="panel panel-default">
+
+                    <div class="panel-heading">
+                        <div class="panel-title">
+                            @Html.CheckBoxFor(m => m[i].Visible, new { @class = "toggle-settings" })
+                            <a data-toggle="collapse" href="@string.Format("#collapse_" + collapseIndex)"> 
+                                @category.CategoryName
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="panel-collapse collapse in" id="@string.Format("collapse_" + collapseIndex++)">
+                        <div class="panel-body">
+                            <table class="table table-hover">
+
+                                <thead>
+                                    <tr>
+                                        <th class="col-xs-2 blogBuddy-th">Show/Hide</th>
+                                        <th class="col-xs-10 blogBuddy-th">Blog</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    
+                                    @for (int j = 0; j < category.Sources.Count; ++j)
+                                    {
+                                        @Html.HiddenFor(x => x[i].Sources[j].SourceId)
+                                        @Html.HiddenFor(x => x[i].Sources[j].SourceName)
+                                        @Html.HiddenFor(x => x[i].Sources[j].SourceUrl)
+                                        var source = Model[i].Sources[j];
+                                        <!-- Table row -->
+                                        <tr>
+                                            <td>
+                                                @Html.CheckBoxFor(x => x[i].Sources[j].Visible, new { @class = "toggle-settings-sources" })
+                                            </td>
+                                            <td class="blogBuddy-td">
+                                                <a class="home-a" target="_blank" href="@source.SourceUrl">@source.SourceName</a>
+                                            </td>
+                                        </tr>
+                                    }
+                                    
+                                </tbody>
+
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+                }
+                <!-- EXAMPLES -->
+                <!-- Save button -->
+                <div class="row manage-btn">
+                    <div class="col-xs-12 text-center">
+                        <button type="submit" class="btn btn-lg btn-blogBuddy">
+                            Save &nbsp;
+                            <span class="glyphicon glyphicon-floppy-disk"></span>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+            }
+
+        </div>
+    </div>
